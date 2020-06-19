@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dummy-fb-firstTake"
+    }
+  },
+  "defaultProject": "dummy-fb-firstTake",
+  "cli": {
+    "analytics": false
+  }
 }

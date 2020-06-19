@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private register:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,8 @@ export class RegisterComponent implements OnInit {
   onSubmit(f: NgForm) {
     console.log(f.value); // { first: '', last: '' }
     console.log(f.valid);
+
+    this.register.register(f.value);
   }
 
 }

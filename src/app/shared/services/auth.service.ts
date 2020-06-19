@@ -6,13 +6,18 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AuthService {
 
-  loginURL="http://localhos:t8000/login";
+  loginURL="http://localhost:3000/users";
 
   constructor(private http :HttpClient ) { }
 
-
-  login(model: any){
-
-    return this.http.post(this.loginURL + 'login' , model)
+  register(user){
+ this.http.post(this.loginURL,user).subscribe(
+   _=>{
+     alert('successful');
+   },error=>{
+     alert('unsucessful')
+   }
+ );
   }
+  
 }
